@@ -1,19 +1,11 @@
 import csv
 import os
 
+from django.conf import settings
 from django.core.management import BaseCommand
 from django.db import IntegrityError
-from django.conf import settings
-
-from titles.models import (
-    Categories,
-    Genres,
-    Title
-)
-from reviews.models import (
-    Comment,
-    Review
-)
+from reviews.models import Comment, Review
+from titles.models import Categories, Genres, Title
 from users.models import User
 
 FILES_CLASSES = {

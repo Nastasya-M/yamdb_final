@@ -1,11 +1,10 @@
 import datetime as dt
 
-from django.conf import settings
-from rest_framework import serializers, filters
-from rest_framework.fields import CharField
-
 from api.validators import username_validator
-from reviews.models import Review, Comment
+from django.conf import settings
+from rest_framework import filters, serializers
+from rest_framework.fields import CharField
+from reviews.models import Comment, Review
 from titles.models import Categories, Genres, Title
 from users.models import User
 
