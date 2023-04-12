@@ -26,6 +26,9 @@ from .serializers import (CategorieSerializer, CommentSerializer,
                           SignupSerializer, TitleSerializer, TokenSerializer,
                           UserSerializer)
 
+EMAIL_ERROR = ('Электронная почта уже занята!')
+USERNAME_ERROR = ('Имя пользователя уже занято!')
+
 
 class GenresViewSet(GetListCreateDeleteViewSet):
     queryset = Genres.objects.all()
@@ -54,8 +57,6 @@ class TitlesViewSet(viewsets.ModelViewSet):
 
 @api_view(['POST'])
 def signup(request):
-    EMAIL_ERROR = 'Электронная почта уже занята!'
-    USERNAME_ERROR = 'Имя пользователя уже занято!'
     serializer = SignupSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     username = serializer.validated_data.get('username')
