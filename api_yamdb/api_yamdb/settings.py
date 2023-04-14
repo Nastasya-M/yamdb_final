@@ -127,6 +127,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 CSV_FILES_DIR = os.path.join(BASE_DIR, 'static/data')
 
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 AUTH_USER_MODEL = 'users.User'
 
 EMAIL_YAMDB = 'Some@mail.com'
