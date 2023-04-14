@@ -10,7 +10,7 @@ services:
       - ./.env
   
   web:
-    image: nastasyam/yamdb_final:latest
+    image: nastasyam/yamdb_fin:latest
     restart: always
     volumes:
       - static_value:/app/static/
