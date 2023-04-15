@@ -19,7 +19,7 @@ GitHub Actions
 
 ### Ссылка на документацию:
 ```
-http://51.250.73.9/redoc/
+[redoc]: https://51.250.73.9/redoc/
 ```
 ### Как запустить проект:
 Клонировать репозиторий:
@@ -73,7 +73,7 @@ scp -r nginx/ <username>@<host>:/home/<username>/
 После успешного деплоя зайдите на боевой сервер и выполните команды:
 ```
 sudo docker-compose exec web python manage.py migrate # примените миграции
-sudo docker-compose exec web python manage.py collectstatic #подгрузите статику
+sudo docker-compose exec web python manage.py collectstatic # подгрузите статику
 sudo docker-compose exec web python manage.py createsuperuser # создайте суперпользователя
 sudo docker-compose exec web python manage.py loaddata fixtures.json # заполните данными базу
 ```
