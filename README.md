@@ -40,7 +40,7 @@ SSH_KEY=<SSH-ключ (для получения команда: cat ~/.ssh/id_r
 TELEGRAM_TO=<id вашего Телеграм-аккаунта>
 TELEGRAM_TOKEN=<Телеграм-токен вашего бота>
 ```
-Переменные PostgreSQL, ключ проекта Django и их значения по-умолчанию можно взять из .env файла:
+Пример заполнения .env файла:
 ```
 DB_ENGINE=django.db.backends.postgresql # указываем, что работаем с postgresql
 DB_NAME=postgres # имя базы данных
@@ -73,7 +73,12 @@ scp -r nginx/ <username>@<host>:/home/<username>/
 После успешного деплоя зайдите на боевой сервер и выполните команды:
 ```
 sudo docker-compose exec web python manage.py migrate # примените миграции
-sudo docker-compose exec web python manage.py collectstatic # подгрузите статику
+sudo docker-compose exec web python manage.py collectstatic --no-input # подгрузите статику
 sudo docker-compose exec web python manage.py createsuperuser # создайте суперпользователя
 sudo docker-compose exec web python manage.py loaddata fixtures.json # заполните данными базу
+```
+Ссылки для проверки сайта:
+```
+[Admin](http://51.250.73.9/admin/login/?next=/admin/)
+[Api](http://51.250.73.9/api/v1/)
 ```
